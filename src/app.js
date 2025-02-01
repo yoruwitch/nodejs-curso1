@@ -1,4 +1,17 @@
 import express from "express";
+import connectDatabase from "./config/dbcConnect.js";
+
+//instância da conexão com o Mongo, colocando await por se tratar de async
+const connection = await connectDatabase();
+
+// "error" é um evento do mongoose
+connection.on("error", (error) => {
+    console.error("Connection error", error);
+});
+
+connection.once("open", () => {
+    console.log("Connection successfull!");
+});
 
 const app = express();
 //middlware para converter objetos em JSON
