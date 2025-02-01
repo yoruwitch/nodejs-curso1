@@ -1,10 +1,14 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 // precisa ser async por fazer conexão com a internet
 async function connectDatabase() {
-    mongoose.connect(
-        "mongodb+srv://yoruwitch4:admin123@bookstore0.dsi0x.mongodb.net/bookstore?retryWrites=true&w=majority&appName=Bookstore0"
-    );
+    mongoose.connect(process.env.MONGODB_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    });
     return mongoose.connection;
 }
 

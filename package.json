@@ -12,6 +12,7 @@
     "license": "ISC",
     "description": "First steps using node js",
     "dependencies": {
+        "dotenv": "^16.4.7",
         "express": "^4.18.1",
         "mongodb": "5.5",
         "mongoose": "^7.3.4",
