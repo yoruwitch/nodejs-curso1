@@ -1,0 +1,17 @@
+{
+    "name": "nodejs-curso1",
+    "version": "1.0.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "dev": "nodemon server.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Evelyn Fernandes",
+    "license": "ISC",
+    "description": "First steps using node js",
+    "dependencies": {
+        "nodemon": "^3.0.1"
+    }
+}
