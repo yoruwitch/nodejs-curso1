@@ -16,7 +16,7 @@ This course is designed to teach the fundamentals of Node.js, including:
 
 Here's a quick overview of the repository structure:
 
--   In progress
+-   `src`
 
 ## How to Use This Repository 🧑‍💻
 
