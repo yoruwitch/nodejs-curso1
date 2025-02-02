@@ -86,6 +86,32 @@ class BookController {
             });
         }
     }
+
+    static async listBookByPublisher(req, res) {
+        // req.query -> query string da requisição, para filtrar os livros pelo publisher
+        const publisher = req.query.publisher;
+        try {
+            const booksByPublisher = await book.find({
+                publisher: publisher,
+            });
+            res.status(200).json(booksByPublisher);
+        } catch (error) {
+            res.status(500).json({
+                message: `${error.message} - Request failed searching the book`,
+            });
+        }
+    }
 }
+
+/*
+Interessante saber: para fazer pesquisa de editoras com espaços
+ou caracter & => {
+        %20 é o código de escape para um espaço.
+        %26 é o código de escape para o caractere &.
+    }
+
+    Exemplo:
+http://localhost:3000/books?publisher=Secker%20%26%20Warburg
+*/
 
 export default BookController;
