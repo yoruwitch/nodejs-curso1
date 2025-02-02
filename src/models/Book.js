@@ -13,6 +13,7 @@ const bookSchema = new mongoose.Schema(
     },
     { versionKey: false }
 );
+
 /* -> O primeiro parâmetro é o nome da coleção criada e o segundo parâmetro
 se refere ao Schema criado anteriormente
 */
