@@ -18,6 +18,13 @@ Here's a quick overview of the repository structure:
 
 -   `src`
 
+-   `src/`
+  -   `controllers/` - Contains the controller files that handle the business logic.
+  -   `models/` - Contains the database models.
+  -   `routes/` - Contains the route definitions for the API endpoints.
+  -   `config/` - Contains the configuration files, such as the database connection settings.
+
+
 ## How to Use This Repository 🧑‍💻
 
 1. Clone the repository:

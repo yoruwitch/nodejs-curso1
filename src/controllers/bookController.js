@@ -1,5 +1,6 @@
 // Vai ser responsável por ser uma interface intermediária entre as requisições
 
+import { author } from "../models/Author.js";
 import book from "../models/Book.js";
 
 class BookController {
@@ -16,10 +17,17 @@ class BookController {
         }
     }
     static async registerBook(req, res) {
+        //req.body -> corpo da requisição, para usar um POST, precisamos usar o body para enviar como request
+        const newBook = req.body;
+
         try {
-            //req.body -> corpo da requisição, para usar um POST, precisamos usar o body para enviar como request
-            // create() é um método do mongoose para criar dados
-            const newBook = await book.create(req.body);
+            const authorFound = await author.findById(newBook.author);
+            const completeBook = {
+                ...newBook,
+                author: { ...authorFound._doc },
+            };
+            const createdBook = await book.create(completeBook);
+
             res.status(201).json({
                 message: "Created successfully",
                 book: newBook,
@@ -81,8 +89,3 @@ class BookController {
 }
 
 export default BookController;
-// app.delete("/books/:id", (req, res) => {
-//     const index = searchBook(req.params.id);
-//     books.splice(index, 1);
-//     res.status(200).send("Book has been deleted successfully");
-// });
