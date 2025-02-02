@@ -1,6 +1,6 @@
 import express from "express";
 import connectDatabase from "./config/dbConnect.js";
-import book from "./models/Book.js";
+import routes from "./routes/index.js";
 
 //instância da conexão com o Mongo, colocando await por se tratar de async
 const connection = await connectDatabase();
@@ -15,22 +15,8 @@ connection.once("open", () => {
 });
 
 const app = express();
-//middlware para converter objetos em JSON
-app.use(express.json());
-
+routes(app);
 // ---- CRUD OPERATIONS ----------
-
-app.get("/", (req, res) => {
-    res.status(200).send("First route in Node.Js");
-});
-
-app.get("/books", async (req, res) => {
-    /*.find() -> método do mongoose, se conecta com o banco MongoDb, encontrando tudo que tem,
-  pois não foi especificado nada */
-    const listBooks = await book.find({});
-    //usando agora .json() pois o tipo de dado é mais complexo, um array de objetos
-    res.status(200).json(listBooks);
-});
 
 app.get("/books/:id", (req, res) => {
     // params é parâmetro
