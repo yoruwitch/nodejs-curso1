@@ -1,16 +1,17 @@
 # Study Repository for Alura Node.js Course 📚
 
-Welcome to my study repository! This repository contains all the materials and exercises from the Node.js course I am following on Alura. 🚀
+Welcome to my study repository! This repository contains all the materials and exercises from the second Node.js course I am following on Alura. 🚀
 
 ## About the Course 📝
 
 This course is designed to teach the fundamentals of Node.js, including:
 
--   Setting up a Node.js environment 🛠️
--   Understanding asynchronous programming ⏳
--   Building RESTful APIs 🌐
--   Working with databases 🗄️
--   And much more!
+In this course, I'll be diving into:
+
+- 🔍 **Searches**: I'll learn how to add search features to my API so users can find what they need.
+- 🔎 **Filters**: I'll see how to add filters to my API endpoints to help users narrow down their search results.
+- 📄 **Pagination**: I'll find out how to break down large sets of data into smaller pages for easier handling.
+- ⚠️ **Error Handling**: I'll get tips on handling errors in my API to make things smoother for users and easier to debug.
 
 ## Repository Structure 📂
 
